@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "alternate-sneaksprint",
+  "version": "${version}",
+  "name": "Toggle and Hold Sneak/Sprint",
+  "description": "A simple mod to add dedicated 'hold' sneak/sprint keys.",
+  "authors": [
+    "DrawThatRedstone"
+  ],
+  "contact": {
+    "homepage": "https://drawthatredst.one",
+    "sources": "https://github.com/DrawThatRedstone/toggle-hold-sneak-sprint"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/alternate-sneaksprint/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "drawthatredstone.altsneaksprint.AlternateSneakSprint"
+    ]
+  },
+  "mixins": [
+    "alternate-sneaksprint.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "~1.21.3",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

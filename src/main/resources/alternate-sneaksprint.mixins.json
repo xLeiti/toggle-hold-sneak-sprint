@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "drawthatredstone.altsneaksprint.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "KeyboardInputMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
