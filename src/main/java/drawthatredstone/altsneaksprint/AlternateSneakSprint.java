@@ -14,8 +14,8 @@ import org.lwjgl.glfw.GLFW;
 
 public class AlternateSneakSprint implements ModInitializer  {
 
-    public static KeyBinding keySneakToggle = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.alt-sneaksprint.sneak", InputUtil.UNKNOWN_KEY.getCode(), KeyBinding.Category.MOVEMENT, () -> true, false));
-    public static KeyBinding keySprintToggle = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.alt-sneaksprint.sprint", InputUtil.UNKNOWN_KEY.getCode(), KeyBinding.Category.MOVEMENT, () -> true,false));
+    public static KeyBinding keySneakToggle = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.alt-sneaksprint.sneak", InputUtil.UNKNOWN_KEY.getCode(), KeyBinding.Category.MOVEMENT, () -> true, true));
+    public static KeyBinding keySprintToggle = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.alt-sneaksprint.sprint", InputUtil.UNKNOWN_KEY.getCode(), KeyBinding.Category.MOVEMENT, () -> true,true));
     public boolean toggleSprint = false;
 
     @Override
