@@ -7,14 +7,15 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.option.StickyKeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.client.util.Window;
 import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
 
-public class AlternateSneakSprint implements ModInitializer {
+public class AlternateSneakSprint implements ModInitializer  {
 
-    public static KeyBinding keySneakToggle = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.alt-sneaksprint.sneak", GLFW.GLFW_KEY_UNKNOWN, "key.categories.movement", () -> true));
-    public static KeyBinding keySprintToggle = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.alt-sneaksprint.sprint", GLFW.GLFW_KEY_UNKNOWN, "key.categories.movement", () -> true));
+    public static KeyBinding keySneakToggle = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.alt-sneaksprint.sneak", InputUtil.UNKNOWN_KEY.getCode(), KeyBinding.Category.MOVEMENT, () -> true, false));
+    public static KeyBinding keySprintToggle = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.alt-sneaksprint.sprint", InputUtil.UNKNOWN_KEY.getCode(), KeyBinding.Category.MOVEMENT, () -> true,false));
     public boolean toggleSprint = false;
 
     @Override
@@ -23,8 +24,8 @@ public class AlternateSneakSprint implements ModInitializer {
     }
 
     public void onTickStart(MinecraftClient client) {
-        long handle = MinecraftClient.getInstance().getWindow().getHandle();
-        boolean normalSprint = InputUtil.isKeyPressed(handle, KeyBindingHelper.getBoundKeyOf(client.options.sprintKey).getCode());
+        Window window = MinecraftClient.getInstance().getWindow();
+        boolean normalSprint = InputUtil.isKeyPressed(window, KeyBindingHelper.getBoundKeyOf(client.options.sprintKey).getCode());
 
         if (client.player != null) {
 
